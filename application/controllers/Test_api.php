@@ -2,11 +2,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Test_api extends CI_Controller {
+class Test_api extends CI_Controller { 
 
 	public function index()
 	{
-		$this->load->view('api_view');
+		$this->load->view('praktik/restfull-ci/api_view');
 	}
 
 	function action()
@@ -16,7 +16,7 @@ class Test_api extends CI_Controller {
 			$data_action=$this->input->post('data_action');
 			if ($data_action=="Delete") {
 				# code...
-				$api_url="http://localhost/CobaRestApi/api/delete" ;
+				$api_url="http://localhost/praktik/restfull-ci/api/delete" ;
 				$form_data = array('nim' => $this->input->post('nim'));
 				$client=curl_init($api_url);
 				curl_setopt($client, CURLOPT_POST, true);
@@ -29,19 +29,19 @@ class Test_api extends CI_Controller {
 			}
 			if ($data_action=="Edit")
 				{
-					$api_url="http://localhost/CobaRestApi/api/update";
+					$api_url="http://localhost/praktik/restfull-ci/api/update";
 					$form_data = array('nim' => $this->input->post('nim'),
 						'nama' => $this->input->post('nama'));
 					$client=curl_init($api_url);
 					curl_setopt($cli, CURLOPT_POST, true);
 					curl_setopt($client, CURLOPT_POSTFIELD, $form_data);
 					curl_setopt($clien,CURLOPT_RETURNTRANSFER, true);
-					response=curl_exec($client);
+					$response=curl_exec($client);
 					curl_close($client);
 					echo $response;
 				} 
 			if($data_action == "fetch_single" ){
-					$api_url="http://localhost/CobaRestApi/api/fetch_single";
+					$api_url="http://localhost/praktik/restfull-ci/api/fetch_single";
 					$form_data = array('nim' => $this->input->post('nim'));
 					$client=curl_init($api_url);
 					curl_setopt($client, CURLOPT_POST, true);
@@ -53,21 +53,21 @@ class Test_api extends CI_Controller {
 			}
 			if ($data_action=="Insert")
 				{
-					$api_url="http://localhost/CobaRestApi/api/insert";
+					$api_url="http://localhost/praktik/restfull-ci/api/insert";
 					$form_data = array('nim' => $this->input->post('nim'),
 						'nama' => $this->input->post('nama'));
 					$client=curl_init($api_url);
 					curl_setopt($cli, CURLOPT_POST, true);
 					curl_setopt($client, CURLOPT_POSTFIELD,$form_data);
 					curl_setopt($clien,CURLOPT_RETURNTRANSFER, true);
-					response=curl_exec($client);
+					$response=curl_exec($client);
 					curl_close($client);
 					echo $response;
 				} 
 
 			if($data_action == "fetch_all" )
 			{
-					$api_url="http://localhost/CobaRestApi/api";
+					$api_url="http://localhost/praktik/restfull-ci/api";
 					$client=curl_init($api_url);
 					curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 					$response=curl_exec($client);
@@ -80,14 +80,19 @@ class Test_api extends CI_Controller {
 							$output .='<tr>
 							<td>'.$row->nim.'</td>
 							<td>'.$row->nama.'</td>
-							<td> <button type="button" name="edit" class="btn btn-warning edit" id="'.$row->nim.'"><i class="material-icons"
-							style="font-size:15px"edit</i></button></td>
-							<td><button type="button" name="delete" class = "btn btn-danger delete" id="'.$row->nim'"><i class="material-icons" style="font-size:15px">delete</i></button></td></tr>
+							<td>
+								<button type="button" name="edit" class="btn btn-warning edit" id="'.$row->nim.'"><i class="material-icons" style="font-size:15px">edit</i></button>
+							</td>
+							<td>
+								<button type="button" name="delete" class="btn btn-danger delete" id="'.$row->nim'"><i class="material-icons" style="font-size:15px">delete</i></button>
+							</td>
+							</tr>
 							';
-							# code...
+
 						}
 					}
-					else{
+					else
+					{
 						$output .='
 						<tr>
 						<td colspan="4" align"center>No Data Found"></td

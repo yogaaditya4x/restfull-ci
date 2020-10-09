@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title>Web FrameWork</title>
-	<script src="<?php echo base_url('asset/jquery.min.js') ?>"></script>
-	<link rel="stylesheet" href="<?php echo base_url('asset/icon.css') ?>" />
-	<link rel="stylesheet" href="<?php echo base_url('asset/bootstrap.min.css') ?>" />
-	<script src="<?php echo base_url('asset/bootstrap.min.js') ?>"></script>
-	<script src="<?php echo base_url('asset/popper.min.js') ?>"></script>
-	<link src="<?php echo base_url('asset/all.css') ?>" integrity="sha384-
+	<title>Web FrameWork</title> 
+	<script src="<?php echo base_url('praktik/restfull-ci/asset/jquery.min.js') ?>"></script>
+	<link rel="stylesheet" href="<?php echo base_url('praktik/restfull-ci/asset/icon.css') ?>" />
+	<link rel="stylesheet" href="<?php echo base_url('praktik/restfull-ci/asset/bootstrap.min.css') ?>" />
+	<script src="<?php echo base_url('praktik/restfull-ci/asset/bootstrap.min.js') ?>"></script>
+	<script src="<?php echo base_url('praktik/restfull-ci/asset/popper.min.js') ?>"></script>
+	<link src="<?php echo base_url('praktik/restfull-ci/asset/all.css') ?>" integrity="sha384-
 	UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
 	crossorigin="anonymous"></script>
 </head>
@@ -79,7 +79,7 @@
 		function fetch_data()
 		{
 			$.ajax({
-				url:"<?php echo base_url(); ?>test_api/action",
+				url:"<?php echo base_url(); ?>praktik/restfull-ci/test_api/action",
 				method:"POST",
 				data:{data_action:'fetch_all'},
 				success:function(data)
@@ -99,7 +99,7 @@
 		$(document).on('submit', '#user_form', function(event){
 			event.preventDefault();
 			$.ajax({
-				url:"<?php echo base_url() . 'test_api/action' ?>",
+				url:"<?php echo base_url() . 'praktik/restfull-ci/test_api/action' ?>",
 				method:"POST",
 				data:$(this).serialize(),
 				dataType:"json",
@@ -127,7 +127,7 @@
 			document.getElementById('nim').readOnly = true;
 			var nim = $(this).attr('id');
 			$.ajax({
-				url:"<?php echo base_url(); ?>test_api/action",
+				url:"<?php echo base_url(); ?>praktik/restfull-ci/test_api/action",
 				method:"POST",
 				data:{nim:nim, data_action:'fetch_single'},
 				dataType:"json",
@@ -148,7 +148,7 @@
 			if(confirm("Are you sure you want to delete this?"))
 			{
 				$.ajax({
-					url:"<?php echo base_url(); ?>test_api/action",
+					url:"<?php echo base_url(); ?>praktik/restfull-ci/test_api/action",
 					method:"POST",
 					data:{nim:nim, data_action:'Delete'},
 					dataType:"JSON",
