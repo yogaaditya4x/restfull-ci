@@ -32,7 +32,7 @@ class Api extends CI_Controller
 				'nim'	=> $this->input->post('nim')
 			);
 
-			$this->
+			$this->api_model->update_api($this->input->post('nim'), $data);
 		}
 	}
 }
