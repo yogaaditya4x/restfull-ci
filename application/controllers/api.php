@@ -11,7 +11,7 @@ class Api extends CI_Controller
 	{
 		# code...
 		parent::__construct();
-		$this->load->model('praktik/restfull-ci/api_model');
+		$this->load->model('api_model');
 		$this->load->library('form_validation');
 	}
 
@@ -29,7 +29,7 @@ class Api extends CI_Controller
 		{
 			$data = array(
 				'nama'	=> $this->input->post('nama'),
-				'nim'	=> $this->input->post('nim')
+				'nim'	=> $this->input->post('nim') 
 			);
 
 			$this->api_model->insert_api($data);
