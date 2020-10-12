@@ -20,7 +20,7 @@ class Test_api extends CI_Controller {
 				$form_data = array('nim' => $this->input->post('nim'));
 				$client=curl_init($api_url);
 				curl_setopt($client, CURLOPT_POST, true);
-				curl_setopt($client, CURLOPT_POSTFIELD, $form_data);
+				curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
 				curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 				$response=curl_exec($client);
 				curl_close($client);
@@ -33,10 +33,10 @@ class Test_api extends CI_Controller {
 					$form_data = array('nim' => $this->input->post('nim'),
 						'nama' => $this->input->post('nama'));
 					$client=curl_init($api_url);
-					curl_setopt($cli, CURLOPT_POST, true);
-					curl_setopt($client, CURLOPT_POSTFIELD, $form_data);
+					curl_setopt($client, CURLOPT_POST, true);
+					curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
 					curl_setopt($clien,CURLOPT_RETURNTRANSFER, true);
-					response=curl_exec($client);
+					$response=curl_exec($client);
 					curl_close($client);
 					echo $response;
 				} 
@@ -45,7 +45,7 @@ class Test_api extends CI_Controller {
 					$form_data = array('nim' => $this->input->post('nim'));
 					$client=curl_init($api_url);
 					curl_setopt($client, CURLOPT_POST, true);
-					curl_setopt($client, CURLOPT_POSTFIELD, $form_data);
+					curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
 					curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 					$response=curl_exec($client);
 					echo $response;
@@ -58,9 +58,9 @@ class Test_api extends CI_Controller {
 						'nama' => $this->input->post('nama'));
 					$client=curl_init($api_url);
 					curl_setopt($cli, CURLOPT_POST, true);
-					curl_setopt($client, CURLOPT_POSTFIELD,$form_data);
+					curl_setopt($client, CURLOPT_POSTFIELDS,$form_data);
 					curl_setopt($clien,CURLOPT_RETURNTRANSFER, true);
-					response=curl_exec($client);
+					$response=curl_exec($client);
 					curl_close($client);
 					echo $response;
 				} 
@@ -81,8 +81,8 @@ class Test_api extends CI_Controller {
 							<td>'.$row->nim.'</td>
 							<td>'.$row->nama.'</td>
 							<td> <button type="button" name="edit" class="btn btn-warning edit" id="'.$row->nim.'"><i class="material-icons"
-							style="font-size:15px"edit</i></button></td>
-							<td><button type="button" name="delete" class = "btn btn-danger delete" id="'.$row->nim'"><i class="material-icons" style="font-size:15px">delete</i></button></td></tr>
+							style="font-size:15px">edit</i></button></td>
+							<td><button type="button" name="delete" class = "btn btn-danger delete" id="'.$row->nim.'"><i class="material-icons" style="font-size:15px">delete</i></button></td></tr>
 							';
 							# code...
 						}
