@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 /**
  * 
  */
-class Api extends CI_Controller
+class Api extends CI_Controller 
 {
 	
 	public function __construct()
@@ -29,7 +29,7 @@ class Api extends CI_Controller
 		{
 			$data = array(
 				'nama'	=> $this->input->post('nama'),
-				'nim'	=> $this->input->post('nim')
+				'nim'	=> $this->input->post('nim') 
 			);
 
 			$this->api_model->insert_api($data);

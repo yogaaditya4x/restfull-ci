@@ -1,15 +1,13 @@
 <html>
-<head>
-	<title>Web FrameWork</title>
-	<script src="<?php echo base_url('asset/jquery.min.js') ?>"></script>
-	<link rel="stylesheet" href="<?php echo base_url('asset/icon.css') ?>" />
-	<link rel="stylesheet" href="<?php echo base_url('asset/bootstrap.min.css') ?>" />
-	<script src="<?php echo base_url('asset/bootstrap.min.js') ?>"></script>
-	<script src="<?php echo base_url('asset/popper.min.js') ?>"></script>
-	<link src="<?php echo base_url('asset/all.css') ?>" integrity="sha384-
-	UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-	crossorigin="anonymous"></script>
-</head>
+<head>     
+	<title>Web FrameWork</title>         
+	<script src="<?php echo base_url('asset/jquery.min.js') ?>"></script>     
+	<link rel="stylesheet" href="<?php echo base_url('asset/icon.css') ?>" />     
+	<link rel="stylesheet" href="<?php echo base_url('asset/bootstrap.min.css') ?>" />     
+	<script src="<?php echo base_url('asset/bootstrap.min.js') ?>"></script>     
+	<script src="<?php echo base_url('asset/popper.min.js') ?>"></script>     
+	<link src="<?php echo base_url('asset/all.css') ?>" integrity="sha384UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></script>    
+</head> 
 <body>
 	<div class="container">
 		<br />
@@ -38,7 +36,7 @@
 					</tbody>
 				</table>
 				<div class="col-md-13" align="right">
-					<button type="button" id="add_button" class="btn btn-info "> <i class="materialicons" style="font-size:15px">add_circle</i> Add</button>
+					<button type="button" id="add_button" class="btn btn-info "> <i class="material-icons" style="font-size:15px">add_circle</i> Add</button>
 				</div>
 			</div>
 		</div>
@@ -99,7 +97,7 @@
 		$(document).on('submit', '#user_form', function(event){
 			event.preventDefault();
 			$.ajax({
-				url:"<?php echo base_url() . 'test_api/action' ?>",
+				url:"<?php echo base_url().'test_api/action'?>",
 				method:"POST",
 				data:$(this).serialize(),
 				dataType:"json",
