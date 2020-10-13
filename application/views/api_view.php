@@ -39,7 +39,7 @@
  </tbody>
  </table>
  	<div class="col-md-13" align="right">
- 	  <button type="button" id="add_button" class="btn btn-info "> <i class="materialicons" style="font-size:15px">Add</button>
+ 	  <button type="button" id="add_button" class="btn btn-info "> <i class="material-icons" style="font-size:15px">add_circle</i> Add</button>
  		<div id="userModal" class="modal fade">
  			<div class="modal-dialog">
  				<form method="post" id="user_form">
